@@ -1,30 +1,18 @@
 {
-  "name": "webzentra",
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "nodemailer": "^8.0.1"
+  },
+  "name": "smtp",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JaypalDhapa/WEbZentra.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/JaypalDhapa/WEbZentra/issues"
-  },
-  "homepage": "https://github.com/JaypalDhapa/WEbZentra#readme",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^17.2.3",
-    "express": "^5.2.1",
-    "mongoose": "^9.0.1",
-    "nodemailer": "^7.0.11",
-    "resend": "^6.6.0"
-  }
+  "type": "module"
 }

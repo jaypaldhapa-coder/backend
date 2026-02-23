@@ -1,28 +1,27 @@
-const express = require("express");
+import dotenv from "dotenv";
+dotenv.config();
+
+import express from 'express';
+import router from './Routes/userRoutes.js';
 const app = express();
-require("dotenv").config();
-const cors = require("cors");
 
-
-// middleware
 app.use(express.json());
-// Allow requests from your frontend domain
-app.use(cors({
-  origin: "https://webzentra.netlify.app", // or "*" for all origins (not recommended for production)
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"]
-}));
 
-//connect mongodb
+console.log("USER:", process.env.EMAIL_USER);
+console.log("PASS:", process.env.EMAIL_PASS);
 
-const connectDB = require("./config/connectDB");
-connectDB();
+
+//Router
 app.get("/", (req, res) => {
-  res.send("Backend is running 🚀");
-});
+    res.status(200).json({
+      success: true,
+      message: "Hello from server",
+    });
+  });
+  
+  // Use Router Correctly
+  app.use("/api", router);
 
-app.use("/formdata",require("./routes/contactRoute"))
-
-app.listen(process.env.PORT || 3000, () => {
-  console.log("Server running");
+app.listen(3000,()=>{
+    console.log("Server running on 3000")
 });
