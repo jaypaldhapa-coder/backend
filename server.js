@@ -22,6 +22,7 @@ app.get("/", (req, res) => {
   // Use Router Correctly
   app.use("/api", router);
 
-app.listen(3000,()=>{
+app.listen(process.env.PORT,()=>{
     console.log("Server running on 3000")
+
 });
